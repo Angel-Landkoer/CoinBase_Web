@@ -11,7 +11,10 @@ module.exports = {
     filename: "main.js"
   },
   resolve: {
-    extensions: [".js"]
+    extensions: [".js"],
+    alias: {
+      "@assetsFont": path.resolve(__dirname, "./src/assets/fonts"),
+    }
   },
   module: {
     rules: [
@@ -29,6 +32,13 @@ module.exports = {
       {
         test: /\.png/,
         type: "asset/resource"
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: "assets/fonts/[hash][ext][query]"
+        }
       }
     ]
   },
