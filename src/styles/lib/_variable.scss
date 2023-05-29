@@ -1,13 +1,21 @@
 // Colors quaternary quinary
-$primaryColor: "#333333";
-$secondaryColor: "#FFFFFF";
-$tertiaryColor: "#A2A2A2";
+
+//Very dark gray
+$primaryColor: #333333;
+// White
+$secondaryColor: #ffffff;
+// Dark gray
+$tertiaryColor: #a2a2a2;
 $quaternaryColor: "";
 $quinaryColor: "";
 
 // Background
-$primaryBackgroundColor: "#E5E5E5";
-$secondaryBackgroundColor: "#FFFFFF";
-$tertiaryBackgroundColor: "#151515";
-$quaternarybackgroundColor: "";
+// Very light gray
+$primaryBackgroundColor: #e5e5e5;
+// White
+$secondaryBackgroundColor: #ffffff;
+//  Very dark gray (mostly black)
+$tertiaryBackgroundColor: #151515;
+// Light gray
+$quaternaryBackgroundColor: #c4c4c4;
 $quinaryBackgroundColor: "";
