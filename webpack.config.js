@@ -17,6 +17,7 @@ module.exports = {
     extensions: [".js"],
     alias: {
       "@assetsFont": path.resolve(__dirname, "./src/assets/fonts"),
+      "@assetImgs": path.resolve(__dirname, "./src/assets/imgs")
     }
   },
   module: {
