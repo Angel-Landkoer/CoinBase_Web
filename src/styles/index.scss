@@ -1,11 +1,14 @@
 // BaseRules
-@import "./baseRules//reset";
+@import "./baseRules/reset";
 
 // Variable
-@import "./lib//variable";
+@import "./lib/variable";
 
 // Mixins
 @import "./lib/mixins";
+
+// Extends
+@import "./lib/extends";
 
 // Header
 @import "./layout/header";
