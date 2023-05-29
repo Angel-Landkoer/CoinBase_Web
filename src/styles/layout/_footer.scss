@@ -1,0 +1,144 @@
+.footer {
+  @include flex(row, space-around, center, nowrap);
+
+  @include measure(0 40px, 0, 100%, 45vh);
+
+  background-color: $tertiaryBackgroundColor;
+
+  .descriptionContent {
+    @include flex(column, space-between, flex-start, nowrap);
+
+    @include measure(0, 0, 370px, 200px);
+
+    & span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+
+      color: #989898;
+
+      mix-blend-mode: normal;
+      opacity: 0.4;
+    }
+
+    .description {
+      @include flex(column, space-around, flex-start, nowrap);
+
+      @include measure(0, 0, 370px, 150px);
+
+      & figure {
+        @include measure(0, 0, 112.22px, 22.61px);
+
+        & img {
+          @include measure(0, 0, 100%, 100%);
+        }
+      }
+
+      & p {
+        @include measure(0, 0, 369px, 80px);
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $tertiaryColor;
+      }
+
+      .contentIcons {
+        @include flex(row, space-between, center, nowrap);
+
+        @include measure(0, 0, 200px, auto);
+      }
+    }
+  }
+
+  .companyLinks {
+    @include flex(column, space-around, flex-start, nowrap);
+
+    @include measure(0, 0, 170px, 235px);
+
+    & h5 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+
+      color: $secondaryColor;
+    }
+
+    & ul {
+      list-style: none;
+
+      & li {
+        & a {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 30px;
+
+          color: $tertiaryColor;
+          @extend %a;
+        }
+      }
+    }
+  }
+
+  .contactUs {
+    @include flex(column, space-between, flex-start, nowrap);
+
+    @include measure(0, 0, 226px, 210px);
+
+    & span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+
+      color: $tertiaryColor;
+    }
+
+    .containerContext {
+      @include flex(column, space-around, flex-start, nowrap);
+
+      & h5 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+
+        color: $secondaryColor;
+      }
+
+      & p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 30px;
+
+        color: $tertiaryColor;
+      }
+    }
+  }
+  .coinbaseInstagram {
+    @include flex(column, space-around, flex-start, nowrap);
+
+    @include measure(0, 0, 315px, 235px);
+
+    .containerContext {
+      & h5 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+
+        color: $secondaryColor;
+      }
+    }
+    .containerCards {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      .cardGrid {
+        @include measure(0, 0, 70px, 70px);
+
+        background-color: $quaternaryBackgroundColor;
+      }
+    }
+  }
+}
