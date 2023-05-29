@@ -1,0 +1,110 @@
+.header {
+  @include measure(30px, 0, 100%, auto);
+
+  & nav {
+    @include flex(row, space-around, center, nowrap);
+
+    & figure {
+      @include measure(0, 0, 142px, 29px);
+
+      & img {
+        @include measure(0, 0, 100%, 100%);
+      }
+    }
+
+    .navList {
+      @include flex(row, space-evenly, center, nowrap);
+
+      @include measure(0, 0, 426px, 26px);
+
+      list-style: none;
+
+      .navItemList {
+        @extend %miniP;
+
+        & a {
+          color: $primaryColor;
+
+          @extend %a;
+        }
+      }
+    }
+
+    .containerDropdown {
+      @include flex(row, center, center, nowrap);
+
+      & select {
+        @include measure(0, 0 10px 0 0, auto, auto);
+
+        border: none;
+
+        @extend %miniP;
+
+        background: none;
+      }
+
+      .btnLogin {
+        @extend %btnMultiColor;
+
+        & a {
+          @extend %miniP;
+
+          @extend %a;
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+
+  .hero {
+    @include flex(row, center, center, nowrap);
+
+    @include measure(30px, 0, 100%, auto);
+
+    // background-image: url("@assetImgs/img/imgFonts/imgFontHeader-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+    .containerContext {
+      & h1 {
+        @include measure(0, 0 0 15px 0, 529px, 180px);
+
+        @extend %maxTitle;
+        color: $secondaryColor;
+      }
+      & p {
+        @include measure(0, 0, 529px, auto);
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+
+        color: $secondaryColor;
+      }
+      .btn {
+        @include flex(row, center, center, nowrap);
+
+        @include measure(0, 15px 0 0 0, 157px, 54px);
+
+        border-radius: 100px;
+        background-color: $secondaryBackgroundColor;
+
+        & a {
+          @extend %miniP;
+
+          @extend %a;
+          @extend %colorGradient;
+        }
+      }
+    }
+
+    & figure {
+      @include measure(0, 0, 628px, 519px);
+
+      & img {
+        @include measure(0, 0, 100%, 100%);
+      }
+    }
+  }
+}
