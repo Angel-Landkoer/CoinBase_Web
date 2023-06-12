@@ -1,8 +1,10 @@
 .header {
-  @include measure(30px, 0, 100%, auto);
+  @include measure(0, 0, 100%, auto);
 
   & nav {
     @include flex(row, space-around, center, nowrap);
+
+    @include measure(30px, 0, auto, auto);
 
     & figure {
       @include measure(0, 0, 142px, 29px);
@@ -44,27 +46,21 @@
       }
 
       .btnLogin {
+        @extend %miniP;
+
+        color: $secondaryColor;
         @extend %btnMultiColor;
-
-        & a {
-          @extend %miniP;
-
-          @extend %a;
-          color: $secondaryColor;
-        }
       }
     }
   }
 
   .hero {
-    @include flex(row, center, center, nowrap);
+    position: relative;
+    @include flex(row, space-around, center, nowrap);
 
-    @include measure(30px, 0, 100%, auto);
+    @include measure(30px, 0, 100%, 750px);
 
-    // background-image: url("@assetImgs/img/imgFonts/imgFontHeader-removebg-preview.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+    background: linear-gradient(174.48deg, #fd749b -12.41%, #281ac8 88.56%);
 
     .containerContext {
       & h1 {
@@ -105,6 +101,13 @@
       & img {
         @include measure(0, 0, 100%, 100%);
       }
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0px;
+
+      @include measure(0, 0, 100%, 237.31px);
     }
   }
 }
