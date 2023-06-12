@@ -17,7 +17,7 @@
     .containerContext {
       @include flex(column, space-around, flex-start, nowrap);
 
-      @include measure(10px, 0, 542px, 90%);
+      @include measure(10px, 0, 542px, 100%);
 
       & h4 {
         @include measure(0, 0, auto, auto);
@@ -44,7 +44,12 @@
   }
 
   .rates {
+    position: relative;
     @include flex(row, center, center, nowrap);
+
+    @include measure(0, 0, 100%, 955.57px);
+
+    @extend %gradient;
 
     .rateInfo {
       @include flex(row, center, center, wrap);
@@ -91,6 +96,8 @@
             }
 
             & span {
+              @include measure(0, 0 10px, auto, auto);
+
               font-weight: 400;
               font-size: 1.4rem;
               line-height: 65px;
@@ -109,7 +116,7 @@
             @include flex(row, center, center, nowrap);
 
             & figure {
-              @include measure(0, 0, 28px, 30px);
+              @include measure(0, 0, 16.54px, 30.41px);
 
               & img {
                 @include measure(0, 0, 100%, 100%);
@@ -117,6 +124,8 @@
             }
 
             & span {
+              @include measure(0, 0 10px, auto, auto);
+
               font-weight: 400;
               font-size: 1.4rem;
               line-height: 65px;
@@ -133,6 +142,8 @@
       }
 
       .ourReserves {
+        @include flex(column, space-between, flex-start, nowrap);
+
         @include measure(20px, 0, 400px, 200px);
 
         .reserveContainer {
@@ -154,7 +165,15 @@
             }
 
             & span {
+              @include measure(0, 0 10px, auto, auto);
+
               @extend %miniPLite;
+            }
+          }
+
+          .currencyProviderEth {
+            & figure {
+              @include measure(0, 0, 16.54px, 30.41px);
             }
           }
 
@@ -187,6 +206,24 @@
           font-weight: 400;
         }
       }
+    }
+
+    .waveTop {
+      position: absolute;
+      top: 0;
+
+      @include measure(0, 0, 100%, 423.57px);
+
+      background-color: transparent;
+    }
+
+    .waveBottom {
+      position: absolute;
+      bottom: 0;
+
+      @include measure(0, 0, 100%, 249.36px);
+
+      background-color: transparent;
     }
   }
 
@@ -232,51 +269,89 @@
   }
 
   .tradeAnywhere {
+    position: relative;
+
     @include flex(row, center, center, nowrap);
 
-    @include measure(0, 35px 0, 100%, 625px);
+    @include measure(10px 0, 40px 0, 100%, 625px);
 
-    .containerContext {
-      @include flex(column, space-around, center, nowrap);
+    background: calc(100% - 50%)
+      linear-gradient(178.18deg, #fd749b -13.56%, #281ac8 158.3%);
 
-      @include measure(20px, 0, 980px, 505px);
+    @extend %gradient;
 
+    .tradeAnywhereInfo {
+      z-index: 2;
+
+      @include flex(row, center, center, nowrap);
+
+      @include measure(0, 0, 980px, 625px);
+
+      box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.1);
       border-radius: 30px;
-      background-color: $secondaryBackgroundColor;
 
-      & h4 {
-        @extend %title;
+      .containerContext {
+        @include flex(column, space-around, center, nowrap);
 
-        @extend %colorGradient;
-      }
+        @include measure(20px, 0, 980px, 505px);
 
-      .cards {
-        @include flex(row, space-evenly, center, nowrap);
+        border-radius: 30px;
+        background-color: $secondaryBackgroundColor;
 
-        @include measure(0, 0, 100%, auto);
+        & h4 {
+          @extend %title;
 
-        .card {
-          @include flex(column, space-evenly, center, nowrap);
+          @extend %colorGradient;
+        }
 
-          @include measure(10px, 0, 262px, 226px);
-          border: 1.5px solid hsl(160, 100%, 75%);
+        .cards {
+          @include flex(row, space-evenly, center, nowrap);
 
-          border-radius: 15px;
-          background-color: $secondaryBackgroundColor;
+          @include measure(0, 0, 100%, auto);
 
-          & figure {
-            @include measure(0, 0, 70px, 58px);
+          .cardBitcoin {
+            & figure {
+              @include measure(0, 0, 58px, 58px);
 
-            & img {
-              @include measure(0, 0, 100%, 100%);
+              & img {
+                @include measure(0, 0, 100%, 100%);
+              }
             }
           }
 
-          & span {
-            @extend %miniP;
+          .cardGif {
+            & figure {
+              @include measure(0, 0, 69.55px, 39.01px);
+
+              & img {
+                @include measure(0, 0, 100%, 100%);
+              }
+            }
+          }
+
+          .card {
+            @include flex(column, space-evenly, center, nowrap);
+
+            @include measure(10px, 0, 262px, 226px);
+            border: 1px solid #281ac8;
+
+            border-radius: 15px;
+            background-color: $secondaryBackgroundColor;
+
+            & span {
+              @extend %miniP;
+            }
           }
         }
       }
+    }
+
+    .wave {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+
+      @include measure(0, 0, 100%, 275.28px);
     }
   }
 
@@ -405,9 +480,11 @@
 
   .testimonials {
     position: relative;
-    @include flex(column, center, center, nowrap);
+    @include flex(column, space-around, center, nowrap);
 
-    @include measure(20px 20px 30px 20px, 40px 0 60px 0, 100%, 100vh);
+    @include measure(20px 20px 30px 20px, 40px 0 60px 0, 100%, 130vh);
+
+    @extend %gradient;
 
     .containerContext {
       @include flex(column, center, center, nowrap);
@@ -432,8 +509,9 @@
     }
 
     .testimonial {
+      z-index: 2;
       position: absolute;
-      bottom: 0;
+      bottom: 30%;
       right: 7%;
 
       @include flex(column, center, flex-start, nowrap);
@@ -460,14 +538,22 @@
         line-height: 20px;
       }
     }
+
+    .bubbles {
+      z-index: 1;
+    }
   }
 
   .downloadApp {
+    position: relative;
     @include flex(column, center, center, nowrap);
 
-    @include measure(20px, 35px 0, 100%, 905px);
+    @include measure(20px, 35px 0, 100%, 955px);
+
+    @extend %gradient;
 
     .containerContext {
+      z-index: 2;
       @include flex(column, space-evenly, center, nowrap);
 
       & h4 {
@@ -488,12 +574,16 @@
 
       @include measure(0, 10px, 193px, 36px);
 
-      & figure {
-        @include measure(5px 0, 0 5px, 98px, 36px);
+      .appStore {
+        @include measure(0, 0, 85px, 36px);
+      }
 
-        & img {
-          @include measure(0, 0, 100%, 100%);
-        }
+      .playStore {
+        @include measure(0, 0, 98px, 28px);
+      }
+
+      & img {
+        @include measure(0, 0, 100%, 100%);
       }
     }
 
@@ -509,6 +599,14 @@
           @include measure(0, 0, 100%, 100%);
         }
       }
+    }
+
+    .wave {
+      z-index: 1;
+      position: absolute;
+      top: -40px;
+
+      @include measure(0, 0, 100%, auto);
     }
   }
 
@@ -550,14 +648,13 @@
           & input {
             @include measure(0 20px, 0, 100%, 100%);
             border: 1px solid;
-
-            @extend %p;
-
-            border-image-source: linear-gradient(
+            border-color: linear-gradient(
               178.18deg,
               #fd749b -13.56%,
               #281ac8 158.3%
             );
+
+            @extend %p;
 
             border-radius: 100px;
           }
