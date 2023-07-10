@@ -1,4 +1,11 @@
 import './styles/index.scss'
+import { store, changeValue } from './store/display'
+
+const { getState, subscribe } = store
+
+subscribe((state) => (stateDisplay = state.toggle))
+
+let stateDisplay = getState().toggle
 
 const closeWindowModal = document.createElement("div")
 const textCloseWindowModal = document.createElement("span")
@@ -116,6 +123,7 @@ function handleDOMContentLoaded() {
     modal.classList.remove("modalHide")
     modal.classList.add("modal")
     permission()
+    changeValue()
   }
   btnLogin.addEventListener("click", handleDisplayForm)
 
