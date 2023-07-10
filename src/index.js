@@ -115,6 +115,21 @@ function handleDOMContentLoaded() {
   signUpContent.appendChild(formContentS)
   formContentS.appendChild(signUpForm)
 
+  function handleActionLoginForm() {
+    permission(stateDisplay)
+    changeValue()
+  }
+
+  function handleActionSignUpForm() {
+    permission()
+  }
+
+  const changePageLogin = loginForm.querySelector(".changePageLogin");
+  changePageLogin.addEventListener("click", handleActionLoginForm);
+
+  const changePageSignUp = signUpForm.querySelector(".changePageSignUp");
+  changePageSignUp.addEventListener("click", handleActionSignUpForm);
+
   const handleDisplayForm = () => {
     hero.classList.add("heroOpacity")
     main.classList.add("mainOpacity")
