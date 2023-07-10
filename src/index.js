@@ -102,6 +102,15 @@ function handleDOMContentLoaded() {
   signUpContent.appendChild(formContentS)
   formContentS.appendChild(signUpForm)
 
+  const handleDisplayForm = () => {
+    hero.classList.add("heroOpacity")
+    main.classList.add("mainOpacity")
+    footer.classList.add("footerOpacity")
+    modal.classList.remove("modalHide")
+    modal.classList.add("modal")
+  }
+  btnLogin.addEventListener("click", handleDisplayForm)
+
   document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
 }
 
