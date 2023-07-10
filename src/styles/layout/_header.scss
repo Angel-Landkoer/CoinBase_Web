@@ -1,5 +1,174 @@
 .header {
+  z-index: 1;
+  position: relative;
+
   @include measure(0, 0, 100%, auto);
+
+  .modalHide {
+    display: none;
+  }
+
+  .modal {
+    z-index: 2;
+    position: fixed;
+    right: 25%;
+
+    @include flex(column, center, center, nowrap);
+
+    @include measure(20px, 0, 644px, 100vh);
+    border: 1px solid black;
+
+    border-radius: 30px;
+
+    background-color: $secondaryBackgroundColor;
+
+    .signUpContent {
+      @include flex(column, space-around, center, nowrap);
+
+      @include measure(0, 0, 100%, 666px);
+
+      .containerContext {
+        @include flex(column, flex-end, center, nowrap);
+
+        @include measure(0, 0, 340px, 84px);
+
+        & h3 {
+          font-size: 2.4rem;
+          font-weight: 700;
+          line-height: 36px;
+
+          @extend %colorGradient;
+        }
+
+        & p {
+          @extend %p;
+        }
+      }
+
+      .formContent {
+        @include flex(column, center, center, nowrap);
+
+        @include measure(0, 0, 350px, 345px);
+
+        .formData {
+          @include flex(column, space-around, center, nowrap);
+
+          @include measure(0, 0, 100%, auto);
+
+          & label {
+            & input {
+              @include measure(0 0 0 8px, 10px 0, 347px, 60px);
+
+              @extend %miniPLite;
+
+              border-radius: 5px;
+            }
+
+            & a {
+              align-self: flex-end;
+
+              text-decoration: none;
+
+              & span {
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 20px;
+
+                color: #2f2f2f;
+              }
+            }
+          }
+
+          & button {
+            @include measure(10px 0, 0, 157px, 54px);
+
+            color: $secondaryColor;
+            @extend %btnMultiColor;
+          }
+        }
+      }
+    }
+
+    .loginContent {
+      @include flex(column, center, center, nowrap);
+
+      @include measure(0, 0, 100%, 583px);
+
+      .containerContext {
+        @include flex(column, flex-end, center, nowrap);
+
+        @include measure(0, 0, 340px, 84px);
+
+        & h3 {
+          font-size: 2.4rem;
+          font-weight: 700;
+          line-height: 36px;
+
+          @extend %colorGradient;
+        }
+
+        & p {
+          @extend %p;
+        }
+      }
+
+      .formContent {
+        @include flex(column, center, center, nowrap);
+
+        @include measure(0, 0, 350px, 345px);
+
+        .formData {
+          @include flex(column, space-around, center, nowrap);
+
+          @include measure(0, 0, 100%, 100%);
+
+          & label {
+            & input {
+              @include measure(0 0 0 8px, 0, 347px, 60px);
+
+              @extend %miniPLite;
+
+              border-radius: 5px;
+            }
+
+            & a {
+              align-self: flex-end;
+
+              text-decoration: none;
+
+              & span {
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 20px;
+
+                color: #2f2f2f;
+              }
+            }
+          }
+
+          & button {
+            @include measure(0, 0, 157px, 54px);
+
+            color: $secondaryColor;
+            @extend %btnMultiColor;
+          }
+        }
+      }
+    }
+
+    .signUpContent,
+    .loginContent {
+      .windowClose {
+        position: absolute;
+        top: 3%;
+        right: 5%;
+
+        & span {
+          @extend %title;
+        }
+      }
+    }
+  }
 
   & nav {
     @include flex(row, space-around, center, nowrap);
@@ -109,5 +278,9 @@
 
       @include measure(0, 0, 100%, 237.31px);
     }
+  }
+
+  .heroOpacity {
+    opacity: 0.3;
   }
 }
