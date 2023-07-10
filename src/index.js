@@ -115,6 +115,15 @@ function handleDOMContentLoaded() {
   signUpContent.appendChild(formContentS)
   formContentS.appendChild(signUpForm)
 
+  const handleCloseModal = () => {
+    hero.classList.remove("heroOpacity")
+    main.classList.remove("mainOpacity")
+    footer.classList.remove("footerOpacity")
+    modal.classList.add("modalHide")
+    modal.classList.remove("modal")
+  }
+  closeWindowModal.addEventListener("click", handleCloseModal)
+
   function handleActionLoginForm() {
     permission(stateDisplay)
     changeValue()
