@@ -61,6 +61,12 @@ function handleDOMContentLoaded() {
   const footer = document.querySelector(".footer")
   const btnLogin = document.querySelector(".btnLogin")
 
+  const permission = (accept) => {
+    modal.innerHTML = ""
+    if (accept) return modal.appendChild(signUpContent);
+    return modal.appendChild(loginContent);
+  }
+
   const loginContent = document.createElement("section")
   loginContent.classList.add("loginContent")
 
@@ -106,8 +112,10 @@ function handleDOMContentLoaded() {
     hero.classList.add("heroOpacity")
     main.classList.add("mainOpacity")
     footer.classList.add("footerOpacity")
+
     modal.classList.remove("modalHide")
     modal.classList.add("modal")
+    permission()
   }
   btnLogin.addEventListener("click", handleDisplayForm)
 
